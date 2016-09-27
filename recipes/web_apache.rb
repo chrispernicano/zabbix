@@ -61,6 +61,14 @@ template "#{node['zabbix']['src_dir']}/zabbix-#{node['zabbix']['server']['versio
   )
 end
 
+apache_module "mpm_event" do
+  enable false
+end
+
+apache_module "mpm_prefork" do
+  conf true
+end
+
 # install vhost for zabbix frontend
 web_app node['zabbix']['web']['fqdn'] do
   server_name node['zabbix']['web']['fqdn']

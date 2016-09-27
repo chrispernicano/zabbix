@@ -325,6 +325,9 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 
 # CHANGELOG
 
+### 0.8.2
+* disable rewritelog, disable mpm_event and use mpm_prefork instead
+
 ### 0.8.1
 * add support for Apache 2.4 (and Ubuntu16)
 
