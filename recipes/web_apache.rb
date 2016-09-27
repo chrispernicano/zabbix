@@ -66,7 +66,7 @@ apache_module "mpm_event" do
 end
 
 apache_module "mpm_prefork" do
-  conf true
+  enable true
 end
 
 # install vhost for zabbix frontend

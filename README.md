@@ -325,6 +325,9 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 
 # CHANGELOG
 
+### 0.8.3
+* don't specify conf for mpm_prefork
+
 ### 0.8.2
 * disable rewritelog, disable mpm_event and use mpm_prefork instead
 
