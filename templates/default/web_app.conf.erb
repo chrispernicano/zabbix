@@ -3,20 +3,26 @@
   ServerAlias <%= @params[:server_aliases].join(' ')%>
   DocumentRoot <%= @params[:docroot] %>
   RewriteEngine On
-  
+
   <Directory <%= @params[:docroot] %>>
     Options +FollowSymLinks
     AllowOverride None
     Order allow,deny
     Allow from all
+  <% if node['apache']['version'] == '2.4' -%>
+    Require all granted
+  <% end -%>
     <% @params[:php_settings].each do |name, value| %>
     php_admin_value <%=name%> <%=value%>
     <%end%>
   </Directory>
-  
+
   <Directory />
     Options FollowSymLinks
     AllowOverride None
+  <% if node['apache']['version'] == '2.4' -%>
+    Require all granted
+  <% end -%>
   </Directory>
 
   <Location /server-status>

@@ -28,7 +28,7 @@ Installing the Agent :
 
 Installing the Server :
 
-    "recipe[zabbix]",  
+    "recipe[zabbix]",
     "recipe[zabbix::server]"
 
 Installing the Database :
@@ -324,6 +324,9 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 * LWRP Magic ?
 
 # CHANGELOG
+
+### 0.8.1
+* add support for Apache 2.4 (and Ubuntu16)
 
 ### 0.8.0
 * This version is a big change with a lot of bugfix and change. Please be careful if you are updated from previous version
