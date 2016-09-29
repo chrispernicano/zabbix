@@ -325,6 +325,9 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 
 # CHANGELOG
 
+### 0.8.4
+* add logic to pull agent conf from node attributes
+
 ### 0.8.3
 * don't specify conf for mpm_prefork
 

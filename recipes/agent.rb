@@ -10,6 +10,7 @@ template 'zabbix_agentd.conf' do
     group 'root'
     mode '644'
   end
+  variables config: node['zabbix']['agent']['conf']
   notifies :restart, 'service[zabbix_agentd]'
 end
 

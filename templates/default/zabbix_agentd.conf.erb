@@ -24,3 +24,8 @@ StartAgents=<%= node['zabbix']['agent']['start_agents'] %>
 <% end -%>
 ListenPort=<%=node['zabbix']['agent']['listen_port'] %>
 Timeout=<%= node['zabbix']['agent']['timeout'] %>
+<% @config.each do |name, value| %>
+<%   unless value == nil %>
+<%=    name %>=<%= value %>
+<%   end %>
+<% end %>
