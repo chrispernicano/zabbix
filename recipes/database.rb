@@ -50,12 +50,14 @@ when 'oracle'
   provider = Chef::Provider::ZabbixDatabaseOracle
 end
 
+db_credentials = Chef::EncryptedDataBagItem.load('zabbix','credentials')[node.chef_environment]
+
 zabbix_database node['zabbix']['database']['dbname'] do
   provider provider
   host node['zabbix']['database']['dbhost']
   port node['zabbix']['database']['dbport'].to_i
-  username node['zabbix']['database']['dbuser']
-  password node['zabbix']['database']['dbpassword']
+  username db_credentials['dbuser']
+  password db_credentials['dbpassword']
   root_username root_username
   root_password root_password
   allowed_user_hosts allowed_user_hosts
