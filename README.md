@@ -325,6 +325,9 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 
 # CHANGELOG
 
+### 0.8.9
+* use double quotes instead of symbols
+
 ### 0.8.8
 * add missing comma
 
