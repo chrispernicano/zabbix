@@ -59,7 +59,7 @@ template "#{node['zabbix']['src_dir']}/zabbix-#{node['zabbix']['server']['versio
   mode '754'
   variables(
     :database => node['zabbix']['database'],
-    :database_credentials => database_credentials
+    :database_credentials => database_credentials,
     :server => node['zabbix']['server']
   )
 end
