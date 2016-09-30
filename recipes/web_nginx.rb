@@ -38,6 +38,8 @@ directory conf_dir do
   action :create
 end
 
+database_credentials = Chef::EncryptedDataBagItem.load('zabbix','credentials')[node.chef_environment]
+
 # install zabbix PHP config file
 template ::File.join(conf_dir, 'zabbix.conf.php') do
   source 'zabbix_web.conf.php.erb'
@@ -46,7 +48,7 @@ template ::File.join(conf_dir, 'zabbix.conf.php') do
   mode '754'
   variables(
     :database => node['zabbix']['database'],
-    :database_credentials => Chef::EncryptedDataBagItem.load('zabbix','credentials')[node.chef_environment],
+    :database_credentials => database_credentials
     :server => node['zabbix']['server']
   )
   notifies :restart, 'service[php-fpm]', :delayed
