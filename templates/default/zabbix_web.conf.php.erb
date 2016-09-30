@@ -12,8 +12,8 @@ $DB["TYPE"]                     = '<%= dbtypes[@database[:install_method]] %>';
 $DB["SERVER"]                   = '<%= @database[:dbhost] %>';
 $DB["PORT"]                     = '<%= @database[:dbport] %>';
 $DB["DATABASE"]                 = '<%= @database[:dbname] %>';
-$DB["USER"]                     = '<%= @database[:dbuser] %>';
-$DB["PASSWORD"]                 = '<%= @database[:dbpassword] %>';
+$DB["USER"]                     = '<%= @database_credentials[:dbuser] %>';
+$DB["PASSWORD"]                 = '<%= @database_credentials[:dbpassword] %>';
 // SCHEMA is relevant only for IBM_DB2 database
 $DB["SCHEMA"]                   = '<%= @database[:schema] %>';
 

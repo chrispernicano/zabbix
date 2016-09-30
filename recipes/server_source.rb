@@ -132,8 +132,8 @@ template "#{node['zabbix']['etc_dir']}/zabbix_server.conf" do
   variables(
     :dbhost             => node['zabbix']['database']['dbhost'],
     :dbname             => node['zabbix']['database']['dbname'],
-    :dbuser             => node['zabbix']['database']['dbuser'],
-    :dbpassword         => node['zabbix']['database']['dbpassword'],
+    :dbuser             => Chef::EncryptedDataBagItem.load('zabbix','credentials')[node.chef_environment]['dbuser'],
+    :dbpassword         => Chef::EncryptedDataBagItem.load('zabbix','credentials')[node.chef_environment]['dbpassword'],
     :dbport             => node['zabbix']['database']['dbport'],
     :java_gateway       => node['zabbix']['server']['java_gateway'],
     :java_gateway_port  => node['zabbix']['server']['java_gateway_port'],

@@ -325,6 +325,9 @@ Default implementation of how to Fetch and handle the Zabbix source code.
 
 # CHANGELOG
 
+### 0.8.6
+* update web and server conf to use credentials data bag
+
 ### 0.8.5
 * pull db credentials from data bag
 
